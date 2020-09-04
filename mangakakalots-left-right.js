@@ -1,14 +1,23 @@
 // ==UserScript==
 // @name     Left/Right Chapter Navigation for Mangakakalots
 // @namespace https://ww1.mangakakalots.com/
-// @version  0.0.1
+// @version  0.0.2
 // @grant    none
 // @include https://*.mangakakalots.com/chapter/*
 // ==/UserScript==
 
-const anchor = [...document.getElementsByClassName("next")];
-let prev = anchor.find(a => a.innerHTML.includes("PREV")).href;
-let next = anchor.find(a => a.innerHTML.includes("NEXT")).href;
+const prevAnchor = [...document.getElementsByClassName("next")];
+const nextAnchor = [...document.getElementsByClassName("back")];
+
+let prev = prevAnchor.find(a => a.innerHTML.includes("PREV")).href;
+let next = null;
+
+if(nextAnchor.length == 0){
+  next = prevAnchor.find(a => a.innerHTML.includes("NEXT")).href;
+} 
+else {
+  next = nextAnchor.find(a => a.innerHTML.includes("NEXT")).href;
+}
 
 function keyCheck(e){
   // alert(e.keyCode);
