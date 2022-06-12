@@ -4,6 +4,7 @@
 // @version  0.0.2
 // @grant    none
 // @include https://*manganelo.com/chapter/*
+// @include https://readmanganato.com/*
 // ==/UserScript==
 
 const prevAnchor = [...document.getElementsByClassName("navi-change-chapter-btn-prev a-h")];
