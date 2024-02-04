@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name     Left/Right Chapter Navigation for Manganelo
 // @namespace https://manganelo.com/
-// @version  0.0.2
+// @version  0.0.3
 // @grant    none
 // @include https://*manganelo.com/chapter/*
-// @include https://readmanganato.com/*
+// @include https://*readmanganato.com/manga*
+// @include https://*chapmanganato.com/*
+// @include https://*chapmanganato.to/*
+
 // ==/UserScript==
 
 const prevAnchor = [...document.getElementsByClassName("navi-change-chapter-btn-prev a-h")];
@@ -23,7 +26,7 @@ if (nextAnchor.length > 0) {
 
 function keyCheck(e){
   // alert(e.keyCode);
-  
+
   if (e.keyCode === 37 && prev) {
     // alert(prev);
     window.location.href = prev;

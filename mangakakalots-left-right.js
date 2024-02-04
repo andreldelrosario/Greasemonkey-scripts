@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name     Left/Right Chapter Navigation for Mangakakalots
 // @namespace https://ww1.mangakakalots.com/
-// @version  0.0.4
+// @version  0.0.5
 // @grant    none
-// @include https://*.mangakakalots.com/chapter/*
-// @include https://*.mangakakalot.com/chapter/*
+// @include https://*.mangakakalots.*/chapter/*
+// @include https://*.mangakakalot.*/chapter/*
 // @include https://mangakakalot.com/chapter/*
+// @include https://*chapmanganato.com/*
+
 // ==/UserScript==
 
-const prevAnchor = [...document.getElementsByClassName("next")];
-const nextAnchor = [...document.getElementsByClassName("back")];
+const nextAnchor = [...document.getElementsByClassName("next")];
+const prevAnchor = [...document.getElementsByClassName("back")];
 
 let prev = null;
 let next = null;
